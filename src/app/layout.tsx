@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "../style/global.css";
+import Header from "./(home)/nav"
 
 export const metadata: Metadata = {
-  title: "portfolio-v2",
-  description: "girang's portfolio-v2",
+  title: "최기랑 포트폴리오",
+  description: "Girang's portfolio-v2",
 };
 
 export default function RootLayout({
@@ -16,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
