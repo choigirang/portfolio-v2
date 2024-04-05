@@ -8,9 +8,26 @@ module.exports = {
   ],
   theme: {
     extend: {
-      padding: {
-        default: "calc((100%-1200px)/2)",
+      transitionProperty: {
+        custom: "all", // 사용자 정의 transition 속성을 설정합니다.
       },
+      transitionTimingFunction: {
+        custom: "ease-in-out", // 사용자 정의 transition 타이밍 함수를 설정합니다.
+      },
+      transitionDelay: {
+        custom: "150ms", // 사용자 정의 transition 딜레이를 설정합니다.
+      },
+      colors: {
+        customYellow: "#f59e0b",
+      },
+      height: {
+        container: "800px",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      textColor: ["hover"],
     },
   },
   plugins: [],
