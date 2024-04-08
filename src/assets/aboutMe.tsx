@@ -27,11 +27,6 @@ export const meData: AboutMe[] = [
     Icon: CalendarDaysIcon,
   },
   {
-    displayName: "주소지",
-    displayTxt: "인천 남동구",
-    Icon: MapPinIcon,
-  },
-  {
     displayName: "연락처",
     displayTxt: "010-7255-7942",
     Icon: PhoneIcon,
