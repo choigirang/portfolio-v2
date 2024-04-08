@@ -7,7 +7,7 @@ export default function Header() {
     <nav className="nav">
       <div className="container h-full flex justify-between items-center pt-0">
         <h1 className="text-3xl text-yellow-400 font-bold">
-          <Link href="/" title="최기랑 포트폴리오">
+          <Link href="/" title="최기랑 포트폴리오" className="font-black">
             My Portfolio.
           </Link>
         </h1>
