@@ -23,6 +23,12 @@ module.exports = {
       height: {
         container: "800px",
       },
+      gridTemplateRows: {
+        fluidity: "minmax(0,100px)",
+      },
+      gridTemplateColumns: {
+        fluidity: "repeat(3, minmax(18rem, auto))",
+      },
     },
   },
   variants: {
