@@ -82,7 +82,7 @@ body {
 
 @layer components {
   .container {
-    @apply w-full h-[800px] flex justify-center  pt-32;
+    @apply w-full h-[800px] flex justify-center  pt-16;
   }
   .nav {
     @apply fixed top-0 left-0 w-full h-32 py-0 flex justify-center bg-transparent;
