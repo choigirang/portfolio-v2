@@ -1,7 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { MySkills } from "@/assets/skills";
+import List from "./list";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
+/** 2024/04/10 - 스킬 리스트 */
 export default function Lists({
   data,
   title,
@@ -9,15 +13,33 @@ export default function Lists({
   data: MySkills[];
   title: string;
 }) {
+  const [open, setOpen] = useState(true);
+
   return (
     <>
       <div className="w-full bg-gray-100 p-2 rounded-2xl">
-        <button className="w-full h-[50px] bg-white rounded-2xl">
+        <button
+          className="w-full h-[50px] relative bg-white rounded-2xl"
+          onClick={() => setOpen((prev) => !prev)}
+        >
           {title}
+          {open ? (
+            <ChevronUpIcon className="w-[20px] h-[20px] absolute right-[20px] top-1/2 -translate-y-1/2" />
+          ) : (
+            <ChevronDownIcon className="w-[20px] h-[20px] absolute right-[20px] top-1/2 -translate-y-1/2" />
+          )}
         </button>
-        <ul className="w-full flex justify-center gap-6">
+
+        <ul
+          className="w-full flex flex-wrap justify-center gap-6 transition-custom"
+          style={{
+            height: !open ? 0 : "inherit",
+            paddingTop: !open ? 0 : 16,
+            overflow: !open ? "hidden" : "visible",
+          }}
+        >
           {data.map((list) => (
-            <li>{list.name}</li>
+            <List key={list.name} {...list} />
           ))}
         </ul>
       </div>
