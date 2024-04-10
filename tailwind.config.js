@@ -25,9 +25,11 @@ module.exports = {
       },
       gridTemplateRows: {
         fluidity: "minmax(0,100px)",
+        projects: "repeat(3, minmax(200px, auto))",
       },
       gridTemplateColumns: {
         fluidity: "repeat(3, minmax(18rem, auto))",
+        projects: "repeat(3, 1fr)",
       },
     },
   },
