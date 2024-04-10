@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { meData } from "@/assets/aboutMe";
 
+/** 2024/04/08 - info */
 export default function About() {
   return (
-    <article className="flex justify-center w-[80%] h-[400px] ">
-      <section className="container h-[400px]">
+    <article className="flex justify-center w-[80%] min-h-[400px] ">
+      <section className="container h-full">
         <ul className="grid place-items-start gap-y-16 grid-cols-fluidity grid-rows-fluidity">
           {meData.map(({ displayName, displayTxt, Icon, link }) => (
             <li

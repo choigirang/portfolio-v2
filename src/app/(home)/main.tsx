@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/16/solid";
 export default function Main() {
   return (
     /** 2024/04/05 - main(intro) */
-    <main id="about" className="flex justify-center w-full h-[500px]">
+    <main id="about" className="flex justify-center w-full mt-32">
       <div className="container h-full flex-col">
         <h2 className="title border-solid border-b-slate-900">최기랑</h2>
         <h2 className="mt-7 font-bold text-3xl text-center drop-shadow-lg whitespace-nowrap">
