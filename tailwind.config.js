@@ -15,7 +15,7 @@ module.exports = {
         custom: "ease-in-out", // 사용자 정의 transition 타이밍 함수를 설정합니다.
       },
       transitionDelay: {
-        custom: "150ms", // 사용자 정의 transition 딜레이를 설정합니다.
+        custom: "1s", // 사용자 정의 transition 딜레이를 설정합니다.
       },
       colors: {
         customYellow: "#f59e0b",
@@ -30,6 +30,7 @@ module.exports = {
       gridTemplateColumns: {
         fluidity: "repeat(3, minmax(18rem, auto))",
         projects: "repeat(3, 1fr)",
+        projectDetail: "40% 60%",
       },
     },
   },
