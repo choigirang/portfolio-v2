@@ -19,7 +19,7 @@ export default function Lists({
     <>
       <div className="w-full bg-gray-100 p-2 rounded-2xl">
         <button
-          className="w-full h-[50px] relative bg-white rounded-2xl"
+          className="w-full h-[50px] bg-white rounded-2xl"
           onClick={() => setOpen((prev) => !prev)}
         >
           {title}
