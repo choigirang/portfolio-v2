@@ -4,9 +4,9 @@ import Card from "./card";
 /** 2024/04/10 - project section */
 export default function Projects() {
   return (
-    <article className="w-full flex justify-center pt-32">
+    <article id="projects" className="w-full flex justify-center">
       <section className="container h-full">
-        <ul className="w-full grid grid-cols-projects grid-rows-projects gap-4">
+        <ul className="w-full flex flex-col gap-8">
           {projectsData.map((project) => (
             <Card key={project.name} {...project} />
           ))}
