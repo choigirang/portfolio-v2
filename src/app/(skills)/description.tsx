@@ -34,7 +34,7 @@ export default function Description({
     <>
       {visible && (
         <div
-          className="flex flex-col items-start gap-1 absolute bottom-[110%] left-1/2 w-[240px] p-2 -translate-x-1/2 z-[999] rounded drop-shadow-md text-white"
+          className="flex flex-col items-start gap-1 absolute bottom-[110%] left-1/2 w-[240px] p-2 -translate-x-1/2 z-10 rounded drop-shadow-md text-white"
           style={{ backgroundColor: color }}
         >
           <span className="font-black">{displayName}</span>
