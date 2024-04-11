@@ -3,7 +3,7 @@ import Lists from "./lists";
 
 export default function Skills() {
   return (
-    <article id="skills" className="w-full flex justify-center">
+    <article id="skills" className="relative w-full flex justify-center">
       <section className="container h-full flex-col justify-center gap-6 pt-0">
         <Lists data={tools} title="사용 가능한 언어 & 도구" />
         <Lists data={feSkills} title="Frontend측 기술" />
