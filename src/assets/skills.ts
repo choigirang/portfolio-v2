@@ -115,7 +115,7 @@ export const beSkills: MySkills[] = [
   },
   {
     name: "amazonec2",
-    color: "#53B145",
+    color: "#F0921E",
     displayName: "EC2",
     description: `https / SSL 인증 및 로드 밸런서를 적용하여 개인 프로젝트 배포를 해본 경험이 있습니다.`,
     link: "https://choigirang.github.io/posts/AWS-EC2-2%EC%9E%A5/",
