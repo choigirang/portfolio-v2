@@ -1,21 +1,25 @@
-import { MyProject } from "@/assets/projects";
 import Image from "next/image";
+import Detail from "./detail";
+import { MyProject, S3_URL } from "@/assets/projects";
 
 /** 2024/04/10 - project card */
 export default function Card(data: MyProject) {
   return (
-    <li className="relative flex justify-center items-center">
-      <Image
-        src={data.thumbnail}
-        width={300}
-        height={200}
-        alt="card img"
-        placeholder="blur"
-        blurDataURL="/gif/spinner.gif"
-      ></Image>
-      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 py-0.5 bg-yellow-400 text-white text-nowrap font-bold rounded-lg shadow-lg">
-        {data.title}
-      </span>
-    </li>
+    <>
+      <li className="w-full h-[500px] grid grid-cols-projectDetail shadow-ml bg-yellow-400 rounded-md p-4">
+        <div className="relative">
+          <Image
+            src={S3_URL + data.thumbnail}
+            alt="card img"
+            fill
+            objectFit="contain"
+            placeholder="blur"
+            blurDataURL="/gif/spinner.gif"
+            className="rounded-md transition-custom"
+          />
+        </div>
+        <Detail {...data} />
+      </li>
+    </>
   );
 }
