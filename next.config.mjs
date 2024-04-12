@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "choigirang-portfolio.s3.ap-northeast-2.amazonaws.com",
+        hostname: "choigirang-portfolio.s3.amazonaws.com",
       },
     ],
   },
