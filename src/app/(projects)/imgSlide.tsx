@@ -6,12 +6,17 @@ import {
   ArrowLeftCircleIcon,
   ArrowRightCircleIcon,
 } from "@heroicons/react/16/solid";
-import { MyProject, S3_URL } from "@/assets/projects";
+import { MyProject } from "@/assets/projects";
 import useGetimg from "../hooks/useGetimg";
+import useSize from "../hooks/useSize";
 
+/** 2024/04/14 - 화면에 따른 project imgSlide */
 export default function ImgSlide(data: MyProject) {
   const [imgUrl, setImgUrl] = useState<string[]>(["/gif/spinner.gif"]);
   const [slideNum, setSlideNum] = useState(0);
+  const { isMobile } = useSize();
+
+  const skills = data.back ? [...data.front, ...data.back] : data.front;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,34 +44,61 @@ export default function ImgSlide(data: MyProject) {
         <Image
           src={imgUrl[slideNum]}
           alt="card img"
-          fill
-          style={{ objectFit: "contain" }}
+          width={isMobile ? 300 : undefined}
+          height={isMobile ? 200 : undefined}
+          fill={isMobile ? false : true}
+          style={{
+            objectFit: "contain",
+            maxHeight: 400,
+          }}
           placeholder="blur"
           sizes="(min-width: 300px) 50vw, 100vw"
           blurDataURL="/gif/spinner.gif"
         />
       ) : (
-        <Image src={"/gif/spinner.gif"} alt="projects image" />
+        <Image
+          width={300}
+          height={200}
+          src={"/gif/spinner.gif"}
+          alt="projects image"
+        />
       )}
-      <div
-        id="slide-container"
-        className="absolute left-1/2 bottom-0 -translate-x-1/2 flex justify-center items-center z-10"
-      >
-        <ArrowLeftCircleIcon
-          width={16}
-          height={16}
-          className="text-gray-300 button-hover"
-          onClick={() => handleSlide("prev")}
-        />
-        <span className="px-4 py-1 bg-gray-200 shadow-lg">
-          {slideNum + 1} / {imgUrl?.length}
-        </span>
-        <ArrowRightCircleIcon
-          width={16}
-          height={16}
-          className="text-gray-300 button-hover"
-          onClick={() => handleSlide("next")}
-        />
+
+      <div className="flex flex-col gap-2 absolute sm:relative left-1/2 bottom-0 -translate-x-1/2 z-10">
+        <div className="flex justify-center gap-2">
+          {skills.map((skill) => (
+            <Image
+              src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
+              alt={`${skill.name} 아이콘`}
+              width="30"
+              height="30"
+              style={{ borderColor: skill.color }}
+              key={skill.name}
+            />
+          ))}
+        </div>
+        {!isMobile && (
+          <div
+            id="slide-container"
+            className="flex justify-center items-center"
+          >
+            <ArrowLeftCircleIcon
+              width={16}
+              height={16}
+              className="text-gray-300 button-hover"
+              onClick={() => handleSlide("prev")}
+            />
+            <span className="px-4 py-1 bg-yellow-400 rounded-lg">
+              {slideNum + 1} / {imgUrl?.length}
+            </span>
+            <ArrowRightCircleIcon
+              width={16}
+              height={16}
+              className="text-gray-300 button-hover"
+              onClick={() => handleSlide("next")}
+            />
+          </div>
+        )}
       </div>
     </>
   );
