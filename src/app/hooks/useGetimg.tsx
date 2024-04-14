@@ -5,6 +5,7 @@ const ACCESS_KEY = process.env.NEXT_PUBLIC_AWS_ACCESS_KEY;
 const region = "ap-northeast-2";
 const bucketName = "choigirang-portfolio";
 
+/** 2024/04/10 - aws-sdk를 이용한 버킷 객체 */
 export default async function useGetimg(folder: string) {
   AWS.config.update({
     accessKeyId: ACCESS_ID,
