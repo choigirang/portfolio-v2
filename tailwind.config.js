@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: { max: "640px" }, // sm 화면 크기를 640px으로 설정합니다.
+      },
       transitionProperty: {
         custom: "all", // 사용자 정의 transition 속성을 설정합니다.
       },
@@ -26,6 +29,7 @@ module.exports = {
       gridTemplateRows: {
         fluidity: "minmax(0,100px)",
         projects: "repeat(3, minmax(200px, auto))",
+        des: "30% 70%",
       },
       gridTemplateColumns: {
         fluidity: "repeat(3, minmax(18rem, auto))",
