@@ -23,11 +23,6 @@ export default function Lists({
           onClick={() => setOpen((prev) => !prev)}
         >
           {title}
-          {open ? (
-            <ChevronUpIcon className="w-[20px] h-[20px] absolute right-[20px] top-1/2 -translate-y-1/2" />
-          ) : (
-            <ChevronDownIcon className="w-[20px] h-[20px] absolute right-[20px] top-1/2 -translate-y-1/2" />
-          )}
         </button>
 
         <ul
