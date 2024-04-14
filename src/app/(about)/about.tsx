@@ -6,7 +6,7 @@ export default function About() {
   return (
     <article className="flex justify-center w-[80%] min-h-[400px] ">
       <section className="container h-full">
-        <ul className="grid place-items-start gap-y-16 grid-cols-fluidity grid-rows-fluidity">
+        <ul className="grid grid-rows-fluidity grid-cols-fluidity sm:grid-rows-1 sm:grid-cols-2 place-items-start gap-y-16">
           {meData.map(({ displayName, displayTxt, Icon, link }) => (
             <li
               key={displayName}
