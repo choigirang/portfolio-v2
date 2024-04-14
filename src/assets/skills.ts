@@ -82,18 +82,25 @@ export const feSkills: MySkills[] = [
     displayName: "Recoil",
     description: `간단한 상태관리를 위해 사용해본 경험이 있습니다.`,
   },
-  {
-    name: "tailwindcss",
-    color: "#06B6D4",
-    displayName: "TailwindCss",
-    description: `CSS로 가능한 대부분의 것을 사용할 수 있고, 유틸리티 속성이나 커스터마이징을 할 수 있습니다.`,
-  },
+
   {
     name: "styledcomponents",
     color: "#DB7093",
     displayName: "Styled-Components",
     description: `전역 스타일 설정을 할 수 있고, TypeScript를 적용해서 코드를 구현할 수 있습니다.`,
     link: "https://1-blue.github.io/posts/styled-components",
+  },
+  {
+    name: "mui",
+    color: "#027FFE",
+    displayName: "Material-UI",
+    description: `스타일링 및 애니메이션 구현을 위해 사용하였으며, 모드에 따른 테마 설정, 컴포넌트 커스텀을 해본 경험이 있습니다.`,
+  },
+  {
+    name: "tailwindcss",
+    color: "#06B6D4",
+    displayName: "TailwindCss",
+    description: `CSS로 가능한 대부분의 것을 사용할 수 있고, 유틸리티 속성이나 커스터마이징을 할 수 있습니다.`,
   },
 ];
 
@@ -131,12 +138,6 @@ export const beSkills: MySkills[] = [
 
 /** 2023/08/14 - 사용 가능한 BE측 기술들 - by 1-blue */
 export const etcSkills: MySkills[] = [
-  {
-    name: "mui",
-    color: "#027FFE",
-    displayName: "Material-UI",
-    description: `스타일링 및 애니메이션 구현을 위해 사용하였으며, 모드에 따른 테마 설정, 컴포넌트 커스텀을 해본 경험이 있습니다.`,
-  },
   {
     name: "framer",
     color: "#027FFE",
