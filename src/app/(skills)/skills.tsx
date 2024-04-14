@@ -1,6 +1,7 @@
 import { beSkills, feSkills, etcSkills, tools } from "@/assets/skills";
 import Lists from "./lists";
 
+/** 2024/04/11 - 스킬 구성 */
 export default function Skills() {
   return (
     <article id="skills" className="relative w-full flex justify-center">
