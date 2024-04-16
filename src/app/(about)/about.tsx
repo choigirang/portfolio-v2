@@ -5,8 +5,8 @@ import { meData } from "@/assets/aboutMe";
 export default function About() {
   return (
     <article className="flex justify-center w-[80%] min-h-[400px] ">
-      <section className="container h-full">
-        <ul className="grid grid-rows-fluidity grid-cols-fluidity sm:grid-rows-1 sm:grid-cols-2 place-items-start gap-y-16">
+      <section className="container h-full mb-16 sm:pt-0 sm:mb-4">
+        <ul className="grid grid-rows-fluidity grid-cols-fluidity sm:grid-rows-1 sm:grid-cols-1 md:grid-rows-1 md:grid-cols-2 place-items-start gap-y-16 sm:gap-y-8">
           {meData.map(({ displayName, displayTxt, Icon, link }) => (
             <li
               key={displayName}

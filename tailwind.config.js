@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        sm: { max: "640px" }, // sm 화면 크기를 640px으로 설정합니다.
+        sm: { max: "640px" },
+        md: { min: "641px", max: "1024px" },
       },
       transitionProperty: {
         custom: "all", // 사용자 정의 transition 속성을 설정합니다.

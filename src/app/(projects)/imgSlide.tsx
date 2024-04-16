@@ -14,7 +14,7 @@ import useSize from "../hooks/useSize";
 export default function ImgSlide(data: MyProject) {
   const [imgUrl, setImgUrl] = useState<string[]>(["/gif/spinner.gif"]);
   const [slideNum, setSlideNum] = useState(0);
-  const { isMobile } = useSize();
+  const { isMobile, isTablet } = useSize();
 
   const skills = data.back ? [...data.front, ...data.back] : data.front;
 
@@ -99,6 +99,8 @@ export default function ImgSlide(data: MyProject) {
             />
           </div>
         )}
+        {/* 테블릿 모드 */}
+        {isTablet && <div></div>}
       </div>
     </>
   );

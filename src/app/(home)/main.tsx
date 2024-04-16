@@ -9,7 +9,7 @@ export default function Main() {
         <h2 className="mt-7 font-bold text-3xl text-center drop-shadow-lg whitespace-nowrap">
           - 프론트엔드 개발자 -
         </h2>
-        <p className="mt-7 text-xl text-center drop-shadow-lg text-neutral-900 leading-relaxed">
+        <p className="mt-7 text-xl text-center drop-shadow-lg text-neutral-900 leading-relaxed sm:text-base">
           타입스크립트를 좋아하는 프론트엔드 개발자입니다.
           <br />
           느리더라도 원리를 이해하고 그것을 검증하는 공부를 선호합니다

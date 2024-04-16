@@ -19,7 +19,7 @@ export default function Detail(data: MyProject) {
   };
 
   return (
-    <div className="grid grid-rows-des w-full h-full gap-4 sm:flex sm:flex-col">
+    <div className="grid grid-rows-des w-full h-full gap-4 sm:flex sm:flex-col md:flex md:flex-col">
       <Summary {...data} />
       <ul className="max-h-[300px] flex flex-col items-start gap-2 bg-gray-200 mr-4 sm:mr-0 p-4 rounded-lg overflow-y-scroll">
         {data.description.map((des) => (
