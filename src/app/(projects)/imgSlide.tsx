@@ -38,15 +38,22 @@ export default function ImgSlide(data: MyProject) {
     if (dir === "prev" && slideNum > 0) setSlideNum((prev) => prev - 1); // 후위 감소 연산자를 사용합니다.
   };
 
+  const handleImgProps = () => {
+    if (isMobile) {
+      return { width: 300, height: 200, layout: undefined };
+    } else if (isTablet) {
+      return { width: 400, height: 300, layout: undefined };
+    }
+    return { width: 500, height: 350, layout: undefined };
+  };
+
   return (
     <>
       {imgUrl ? (
         <Image
           src={imgUrl[slideNum]}
           alt="card img"
-          width={isMobile ? 300 : undefined}
-          height={isMobile ? 200 : undefined}
-          fill={isMobile ? false : true}
+          {...handleImgProps()}
           style={{
             objectFit: "contain",
             maxHeight: 400,
@@ -54,6 +61,8 @@ export default function ImgSlide(data: MyProject) {
           placeholder="blur"
           sizes="(min-width: 300px) 50vw, 100vw"
           blurDataURL="/gif/spinner.gif"
+          quality={50}
+          className="h-auto"
         />
       ) : (
         <Image
@@ -61,10 +70,11 @@ export default function ImgSlide(data: MyProject) {
           height={200}
           src={"/gif/spinner.gif"}
           alt="projects image"
+          className="h-auto"
         />
       )}
 
-      <div className="flex flex-col gap-2 absolute sm:relative left-1/2 bottom-0 -translate-x-1/2 z-10">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-center gap-2">
           {skills.map((skill) => (
             <Image
