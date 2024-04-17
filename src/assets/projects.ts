@@ -41,7 +41,7 @@ export const projectsData: MyProject[] = [
     github: "",
     link: "",
     description: [
-      "소개를 위한 포트폴리오를 제작한 프로젝트입니다.",
+      "소개를 위해 제작한 포트폴리오 version 2 입니다.",
       "*Next 14버전*을 사용하였습니다.",
       "SSR 스타일 적용을 위해 tailwind를 사용하였습니다.",
       "웹과 모바일 등 접근성을 높이기 위해 *반응형웹*으로 제작하였습니다.",
@@ -90,7 +90,7 @@ export const projectsData: MyProject[] = [
     github: "https://github.com/choigirang/portfolio",
     link: "http://choigirang-portfolio.site:3000",
     description: [
-      "소개를 위한 포트폴리오를 제작한 프로젝트입니다.",
+      "소개를 위해 제작한 프로젝트입니다.",
       "Typescript로 *데이터 형태의 다양한 타입들을 커스텀*하여 사용하였습니다.",
       "웹과 모바일 등 접근성을 높이기 위해 *반응형웹*으로 제작하였습니다.",
       "MUI를 사용하여 *테마 적용, TextFild, Tabs, Switch 등의 컴포넌트를 커스텀*하여 적용하였습니다.",
