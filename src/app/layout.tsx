@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../style/global.css";
-import Header from "./(home)/nav"
+import Header from "./(home)/nav";
+import TopBtn from "./(footer)/topBtn";
 
 export const metadata: Metadata = {
   title: "최기랑 포트폴리오",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <TopBtn />
       </body>
     </html>
   );
