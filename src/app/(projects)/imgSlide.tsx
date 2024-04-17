@@ -15,13 +15,14 @@ export default function ImgSlide(data: MyProject) {
   const [imgUrl, setImgUrl] = useState<string[]>(["/gif/spinner.gif"]);
   const [slideNum, setSlideNum] = useState(0);
   const { isMobile, isTablet } = useSize();
+  const getImg = useGetimg(data.name);
 
   const skills = data.back ? [...data.front, ...data.back] : data.front;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const urls = await useGetimg(data.name);
+        const urls = await getImg;
 
         if (urls) setImgUrl(urls);
       } catch (error) {

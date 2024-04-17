@@ -9,10 +9,11 @@ import useSize from "../hooks/useSize";
 
 export default function Category() {
   const [showNav, setShowNav] = useState(false);
-  const { isMobile, setMobile } = useSize();
+  const { isMobile } = useSize();
+  const scroll = useScroll();
 
-  const onScroll = (id: string) => {
-    useScroll().scrollToPage(id);
+  const hanldeScroll = (id: string) => {
+    scroll.scrollToPage(id);
   };
 
   /** 모바일 사이즈 */
@@ -53,19 +54,19 @@ export default function Category() {
       )}
       <ul className="flex gap-10 transition-custom" style={getStyles()}>
         <li
-          onClick={() => onScroll("about")}
+          onClick={() => hanldeScroll("about")}
           className={twMerge("button-hover")}
         >
           <Link href="/#about">About</Link>
         </li>
         <li
-          onClick={() => onScroll("skills")}
+          onClick={() => hanldeScroll("skills")}
           className={twMerge("button-hover")}
         >
           <Link href="/#skills">Skills</Link>
         </li>
         <li
-          onClick={() => onScroll("projects")}
+          onClick={() => hanldeScroll("projects")}
           className={twMerge("button-hover")}
         >
           <Link href="/#projects">Projects</Link>
