@@ -36,7 +36,6 @@ export const projectsData: MyProject[] = [
         color: "#06B6D4",
         displayName: "TailwindCss",
       },
-      { name: "amazonec2", displayName: "EC2", color: "#F0921E" },
     ],
     back: [],
     github: "",
