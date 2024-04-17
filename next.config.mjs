@@ -14,6 +14,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/images/:path*",
+        destination: "https://choigirang-portfolio.s3.amazonaws.com/:path*",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
