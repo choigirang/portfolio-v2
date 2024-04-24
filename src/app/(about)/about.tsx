@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { meData } from "@/assets/aboutMe";
+import { meData } from "@/app/assets/aboutMe";
 
 /** 2024/04/08 - info */
 export default function About() {
@@ -26,7 +26,7 @@ export default function About() {
                     {displayTxt}
                   </Link>
                 ) : (
-                  <span className="">{displayTxt}</span>
+                  <span>{displayTxt}</span>
                 )}
               </div>
             </li>
