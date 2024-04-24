@@ -1,4 +1,4 @@
-import { projectsData } from "@/assets/projects";
+import { projectsData } from "@/app/assets/projects";
 import Card from "./card";
 
 /** 2024/04/10 - project section */

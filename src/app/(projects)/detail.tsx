@@ -1,4 +1,4 @@
-import { MyProject } from "@/assets/projects";
+import { MyProject } from "@/app/assets/projects";
 import Summary from "./summary";
 
 /** 2024/04/11 - 프로젝트 상세 설명 팝업 */

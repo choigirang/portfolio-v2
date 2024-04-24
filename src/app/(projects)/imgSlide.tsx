@@ -6,7 +6,7 @@ import {
   ArrowLeftCircleIcon,
   ArrowRightCircleIcon,
 } from "@heroicons/react/16/solid";
-import { MyProject } from "@/assets/projects";
+import { MyProject } from "@/app/assets/projects";
 import useGetimg from "../hooks/useGetimg";
 import useSize from "../hooks/useSize";
 

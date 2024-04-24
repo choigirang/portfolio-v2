@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MySkills } from "@/assets/skills";
+import { MySkills } from "@/app/assets/skills";
 import List from "./list";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 

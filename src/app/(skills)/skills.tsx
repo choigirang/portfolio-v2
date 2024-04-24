@@ -1,4 +1,4 @@
-import { beSkills, feSkills, etcSkills, tools } from "@/assets/skills";
+import { beSkills, feSkills, etcSkills, tools } from "@/app/assets/skills";
 import Lists from "./lists";
 
 /** 2024/04/11 - 스킬 구성 */
