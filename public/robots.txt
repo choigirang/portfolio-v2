@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /exclude
+
+# Host
+Host: https://choigirang-portfolio-v2.vercel.app/
+
+# Sitemaps
+Sitemap: https://choigirang-portfolio-v2.vercel.app/sitemap.xml
