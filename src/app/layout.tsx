@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import "../style/global.css";
+import "./style/global.css";
 import Header from "./(home)/nav";
 import TopBtn from "./(footer)/topBtn";
+import { getMetadata } from "./assets/metaData";
 
-export const metadata: Metadata = {
-  title: "최기랑 포트폴리오",
-  description: "Girang's portfolio-v2",
+export const generateMetadata = async () => {
+  return getMetadata();
 };
 
 export default function RootLayout({
