@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpCircleIcon } from "@heroicons/react/16/solid";
-import useScroll from "../hooks/useScroll";
+import useScroll from "../../hooks/useScroll";
 
 export default function TopBtn() {
   const handleUp = useScroll();

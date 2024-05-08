@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Description from "./description";
 import Image from "next/image";
-import { MySkills } from "@/app/assets/skills";
+import { MySkills } from "@/assets/skills";
 
 /** 2024/04/10 - 개별 Skill List */
 export default function List(list: MySkills) {

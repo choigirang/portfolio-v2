@@ -1,5 +1,5 @@
 import Detail from "./detail";
-import { MyProject } from "@/app/assets/projects";
+import { MyProject } from "@/assets/projects";
 import ImgSlide from "./imgSlide";
 
 /** 2024/04/10 - project card */

@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
-import useScroll from "../hooks/useScroll";
+import useScroll from "../../hooks/useScroll";
 import { useState } from "react";
 import { ArrowRightCircleIcon, Bars2Icon } from "@heroicons/react/16/solid";
-import useSize from "../hooks/useSize";
+import useSize from "../../hooks/useSize";
 
 export default function Category() {
   const [showNav, setShowNav] = useState(false);

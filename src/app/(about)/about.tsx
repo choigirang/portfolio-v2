@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { meData } from "@/app/assets/aboutMe";
+import { meData } from "@/assets/aboutMe";
 
 /** 2024/04/08 - info */
 export default function About() {

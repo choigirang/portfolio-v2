@@ -6,9 +6,9 @@ import {
   ArrowLeftCircleIcon,
   ArrowRightCircleIcon,
 } from "@heroicons/react/16/solid";
-import { MyProject } from "@/app/assets/projects";
-import useGetimg from "../hooks/useGetimg";
-import useSize from "../hooks/useSize";
+import { MyProject } from "@/assets/projects";
+import useGetimg from "../../hooks/useGetimg";
+import useSize from "../../hooks/useSize";
 
 /** 2024/04/14 - 화면에 따른 project imgSlide */
 export default function ImgSlide(data: MyProject) {

@@ -1,4 +1,4 @@
-import { MyProject } from "@/app/assets/projects";
+import { MyProject } from "@/assets/projects";
 import Link from "next/link";
 
 /** 2024/04/14 - 화면에 따른 project description */
