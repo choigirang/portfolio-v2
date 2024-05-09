@@ -13,14 +13,14 @@ export default function About() {
               className="flex justify-between space-x-4 px-4"
             >
               {<Icon className="w-16 h-16" />}
-              <div className="relative top-3 flex flex-col whitespace-nowrap space-y-1.5 text-left">
+              <div className="relative top-3 flex flex-col whitespace-nowrap space-y-1.5 text-left  text-xs md:text-sm">
                 <span className="font-bold">{displayName}</span>
                 {link ? (
                   <Link
                     href={link}
                     target="_blank"
                     className="
-                    font-black text-sm transition-colors hover:underline underline-offset-4
+                    font-black transition-colors hover:underline underline-offset-4
                     text-yellow-500 focus:text-yellow-600 active:text-yellow-600"
                   >
                     {displayTxt}

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "./style/global.css";
 import Header from "./(home)/nav";
 import TopBtn from "./(footer)/topBtn";

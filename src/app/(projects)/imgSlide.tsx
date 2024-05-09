@@ -76,7 +76,7 @@ export default function ImgSlide(data: MyProject) {
       )}
 
       <div className="flex flex-col gap-2">
-        <div className="flex justify-center gap-2">
+        <div className="flex justify-center gap-2 flex-wrap">
           {skills.map((skill) => (
             <Image
               src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}

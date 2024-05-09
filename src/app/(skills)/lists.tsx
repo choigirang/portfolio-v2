@@ -16,28 +16,26 @@ export default function Lists({
   const [open, setOpen] = useState(true);
 
   return (
-    <>
-      <div className="w-full bg-gray-100 p-2 rounded-2xl">
-        <button
-          className="w-full h-[50px] bg-white rounded-2xl"
-          onClick={() => setOpen((prev) => !prev)}
-        >
-          {title}
-        </button>
+    <div className="w-full bg-gray-100 p-2 rounded-2xl">
+      <button
+        className="w-full h-[50px] bg-white rounded-2xl"
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        {title}
+      </button>
 
-        <ul
-          className="w-full flex flex-wrap justify-center gap-6 transition-custom"
-          style={{
-            height: !open ? 0 : "inherit",
-            paddingTop: !open ? 0 : 16,
-            overflow: !open ? "hidden" : "visible",
-          }}
-        >
-          {data.map((list) => (
-            <List key={list.name} {...list} />
-          ))}
-        </ul>
-      </div>
-    </>
+      <ul
+        className="relative w-full flex flex-wrap justify-center gap-6 transition-custom"
+        style={{
+          height: !open ? 0 : "inherit",
+          paddingTop: !open ? 0 : 16,
+          overflow: !open ? "hidden" : "visible",
+        }}
+      >
+        {data.map((list) => (
+          <List key={list.name} {...list} />
+        ))}
+      </ul>
+    </div>
   );
 }

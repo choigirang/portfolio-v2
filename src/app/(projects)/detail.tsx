@@ -23,7 +23,10 @@ export default function Detail(data: MyProject) {
       <Summary {...data} />
       <ul className="max-h-[300px] h-full flex flex-col items-start gap-2 bg-gray-200 mr-4 sm:mr-0 p-4 rounded-lg overflow-y-scroll">
         {data.description.map((des) => (
-          <li key={des} className="flex text-start gap-4 text-lg">
+          <li
+            key={des}
+            className="flex text-start gap-4 text-lg sm:text-sm md:text-base"
+          >
             <span>✅</span>
             <span>{parseDescription(des)}</span>
           </li>

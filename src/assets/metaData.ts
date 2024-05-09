@@ -8,7 +8,7 @@ export const META = {
   title: "최기랑 | 포트폴리오",
   siteName: "choigirang's portfolio",
   description: "Portfolio v2 입니다.",
-  keyword: ["포트폴리오", "프론트엔드", "이력서"],
+  keyword: ["최기랑", "포트폴리오", "프론트엔드", "이력서"],
   url: "https://choigirang-portfolio-version2.vercel.app/",
   googleVerification: process.env.GOOGLE || "",
   naverVerification: process.env.NAVER || "",

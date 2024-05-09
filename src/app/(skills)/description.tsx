@@ -1,5 +1,6 @@
 "use client";
 
+import useSize from "@/hooks/useSize";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -18,6 +19,7 @@ export default function Description({
   link?: string;
 }) {
   const [visible, setVisible] = useState(desOpen);
+  const { isMobile } = useSize();
 
   /** 2024/04/10 - 게시물 링크로 마우스 이동 시 unmount 되지 않기 위한 추가 타이머 */
   useEffect(() => {
