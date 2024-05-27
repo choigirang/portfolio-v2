@@ -78,7 +78,7 @@ export default function ImgSlide(data: MyProject) {
 
       <div className="flex flex-col gap-2">
         {refactor && refactor.length !== 0 && (
-          <ul>
+          <ul className="flex justify-center gap-2 flex-wrap">
             <li className="flex items-center text-stone-800 bg-yellow-400 px-1 rounded">
               refactor
             </li>
