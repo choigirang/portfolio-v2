@@ -17,7 +17,10 @@ export default async function useGetimg(folder: string) {
 
   try {
     const data = await s3
-      .listObjectsV2({ Bucket: bucketName, Prefix: `${folder}/` })
+      .listObjectsV2({
+        Bucket: bucketName,
+        Prefix: `${folder === "windows95" ? "pokemon" : folder}/`,
+      })
       .promise();
 
     if (data.Contents) {
