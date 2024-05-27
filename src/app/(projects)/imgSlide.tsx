@@ -83,14 +83,13 @@ export default function ImgSlide(data: MyProject) {
               refactor
             </li>
             {refactor.map((skill) => (
-              <li>
+              <li key={skill.name}>
                 <Image
                   src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
                   alt={`${skill.name} 아이콘`}
                   width="30"
                   height="30"
                   style={{ borderColor: skill.color }}
-                  key={skill.name}
                 />
               </li>
             ))}
@@ -103,14 +102,13 @@ export default function ImgSlide(data: MyProject) {
             </li>
           )}
           {skills.map((skill) => (
-            <li>
+            <li key={skill.name}>
               <Image
                 src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
                 alt={`${skill.name} 아이콘`}
                 width="30"
                 height="30"
                 style={{ borderColor: skill.color }}
-                key={skill.name}
               />
             </li>
           ))}
