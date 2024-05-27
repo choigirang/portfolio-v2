@@ -3,6 +3,12 @@ import Summary from "./summary";
 
 /** 2024/04/11 - 프로젝트 상세 설명 팝업 */
 export default function Detail(data: MyProject) {
+  const checkTitleDetails = (text: string) => {
+    const title = text.startsWith("!");
+
+    return title;
+  };
+
   const parseDescription = (text: string) => {
     const parts = text.split("*");
 
@@ -27,8 +33,12 @@ export default function Detail(data: MyProject) {
             key={des}
             className="flex text-start gap-4 text-lg sm:text-sm md:text-base"
           >
-            <span>✅</span>
-            <span>{parseDescription(des)}</span>
+            {!checkTitleDetails(des) && <span>✅</span>}
+            <span
+              className={`${checkTitleDetails(des) && "font-bold bg-yellow-400 p-1 rounded"}`}
+            >
+              {checkTitleDetails(des) ? des.slice(1) : parseDescription(des)}
+            </span>
           </li>
         ))}
       </ul>

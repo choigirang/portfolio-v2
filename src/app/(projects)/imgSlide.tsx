@@ -17,6 +17,7 @@ export default function ImgSlide(data: MyProject) {
   const { isMobile, isTablet } = useSize();
   const getImg = useGetimg(data.name);
 
+  const refactor = data.refactor;
   const skills = data.back ? [...data.front, ...data.back] : data.front;
 
   useEffect(() => {
@@ -76,18 +77,44 @@ export default function ImgSlide(data: MyProject) {
       )}
 
       <div className="flex flex-col gap-2">
-        <div className="flex justify-center gap-2 flex-wrap">
+        {refactor && refactor.length !== 0 && (
+          <ul>
+            <li className="flex items-center text-stone-800 bg-yellow-400 px-1 rounded">
+              refactor
+            </li>
+            {refactor.map((skill) => (
+              <li>
+                <Image
+                  src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
+                  alt={`${skill.name} 아이콘`}
+                  width="30"
+                  height="30"
+                  style={{ borderColor: skill.color }}
+                  key={skill.name}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
+        <ul className="flex justify-center gap-2 flex-wrap">
+          {refactor && (
+            <li className="flex items-center text-stone-800 bg-yellow-400 px-1 rounded">
+              before
+            </li>
+          )}
           {skills.map((skill) => (
-            <Image
-              src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
-              alt={`${skill.name} 아이콘`}
-              width="30"
-              height="30"
-              style={{ borderColor: skill.color }}
-              key={skill.name}
-            />
+            <li>
+              <Image
+                src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
+                alt={`${skill.name} 아이콘`}
+                width="30"
+                height="30"
+                style={{ borderColor: skill.color }}
+                key={skill.name}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
         {!isMobile && (
           <div
             id="slide-container"
