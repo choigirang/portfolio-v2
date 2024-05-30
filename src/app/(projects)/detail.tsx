@@ -27,7 +27,7 @@ export default function Detail(data: MyProject) {
   return (
     <div className="flex flex-col w-full h-full gap-4 sm:flex sm:flex-col md:flex md:flex-col">
       <Summary {...data} />
-      <ul className="max-h-[300px] h-full flex flex-col items-start gap-2 bg-gray-200 mr-4 sm:mr-0 p-4 rounded-lg overflow-y-scroll">
+      <ul className="h-full flex flex-col items-start gap-2 bg-gray-200 mr-4 sm:mr-0 p-4 rounded-lg overflow-y-scroll">
         {data.description.map((des) => (
           <li
             key={des}
