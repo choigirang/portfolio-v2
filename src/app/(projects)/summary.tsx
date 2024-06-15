@@ -21,14 +21,22 @@ export default function Summary(data: MyProject) {
         <span>: {data.role}</span>
       </li>
       <li className="flex gap-2">
+        <span className="font-extrabold">소개</span>
+        <span>: {data.summary}</span>
+      </li>
+      <li className="flex gap-2">
         <span className="flex gap-2 font-extrabold">링크</span> :
-        <Link
-          href={data.link}
-          target="_blank"
-          className="hover:text-yellow-500 hover:underline"
-        >
-          Deploy
-        </Link>
+        {!data.link ? (
+          <span>죄송합니다. 현재는 이용할 수 없는 페이지입니다.</span>
+        ) : (
+          <Link
+            href={data.link}
+            target="_blank"
+            className="hover:text-yellow-500 hover:underline"
+          >
+            Deploy
+          </Link>
+        )}
         <Link
           href={data.github}
           target="_blank"
