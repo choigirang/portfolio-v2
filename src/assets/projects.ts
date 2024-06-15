@@ -4,18 +4,24 @@ interface Stack {
   color: string;
 }
 
+type Des = {
+  title: string;
+  detail: string[];
+};
+
 export interface MyProject {
   period: string;
   title: string;
   name: string;
   displayName: string;
   role: string;
+  summary: string;
   front: Stack[];
   back?: Stack[];
   refactor?: Stack[];
   github: string;
   link: string;
-  description: string[];
+  description: Des[];
 }
 
 export const S3_URL =
@@ -29,6 +35,7 @@ export const projectsData: MyProject[] = [
     name: "portfolioV2",
     displayName: "포트폴리오 v2",
     role: "개인 프로젝트",
+    summary: "포트폴리오 version 2 입니다.",
     front: [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
       { name: "nextdotjs", displayName: "Next.js", color: "#000000" },
@@ -42,9 +49,43 @@ export const projectsData: MyProject[] = [
     github: "https://github.com/choigirang/portfolio-v2",
     link: "https://choigirang-portfolio-version2.vercel.app/",
     description: [
-      "소개를 위해 제작한 포트폴리오 version 2 입니다.",
-      "*Next 14버전*을 사용하였습니다.",
-      "웹과 모바일의 접근성을 높이기 위해 *반응형웹*으로 제작하였습니다.",
+      {
+        title: "SSR 및 SEO 적용을 위해 *Next 14*로 제작하였습니다.",
+        detail: [
+          "아래와 같은 이유로 SSR 방식에 이점이 있다고 생각하여 Next.js를 선택하였습니다.",
+          "원 페이지로 제작하였기 때문에 페이지 이동이 없어, 빠른 화면 로드를 목적으로 한다.",
+          "서버에서 데이터를 가져오지 않기 때문에 초기 로딩 속도가 느려지지 않는다.",
+          "포트폴리오이기에 검색엔진 최적화가 필요하다.",
+        ],
+      },
+      {
+        title:
+          "*타입 에러를 통한 프로젝트 안정성을 높이기 위해 typescript를 사용하였습니다.*",
+        detail: [
+          "프로젝트 및 기술 스택에 대한 데이터를 유니온 타입과 유틸리티 타입을 사용하여 작성하였습니다.",
+          "재사용 컴포넌트의 props에 대한 타입 가드를 사용하여 작성하였습니다.",
+        ],
+      },
+      {
+        title:
+          "필요에 따라 *클라이언트 / 서버 컴포넌트를 분리*하여 작성하였습니다.",
+        detail: [
+          "data를 props로 활용하고, children을 사용하여 클라이언트 컴포넌트 안에서 서버 컴포넌트를 사용하였습니다.",
+          "아코디언, 툴팁 등의 애니메이션이 필요한 컴포넌트를 분리하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*Next.js에 최적화된 스타일 적용을 위해 tailwind*를 사용하였습니다.",
+        detail: [
+          "가독성을 높이기 위해 반복되는 스타일을 미리 선언하여 적용하였습니다.",
+          "커스텀 테마를 사용하여 스타일을 적용할 수 있습니다.",
+        ],
+      },
+      {
+        title: "모바일에서도 접근하기 위해 *반응형 웹으로 작성*하였습니다.",
+        detail: [],
+      },
     ],
   },
   {
@@ -52,10 +93,13 @@ export const projectsData: MyProject[] = [
     title: "Movie API를 이용한 영화 리스트",
     name: "movie",
     displayName: "Movie Calender",
+    summary:
+      "TMDB API를 이용하여 영화 목록과 영화 계획표를 작성하기 위한 프로젝트입니다.",
     role: "개인 프로젝트",
     refactor: [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
       { name: "nextdotjs", displayName: "Next.js", color: "#000000" },
+      { name: "axios", displayName: "Axios", color: "#884798" },
       { name: "redux", displayName: "RTK", color: "#764ABC" },
       { name: "tailwindcss", displayName: "Tailwind", color: "#05B6D3" },
     ],
@@ -63,6 +107,7 @@ export const projectsData: MyProject[] = [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
       { name: "nextdotjs", displayName: "Next.js", color: "#000000" },
       { name: "reactquery", displayName: "React-Query", color: "#FF4154" },
+      { name: "axios", displayName: "Axios", color: "#884798" },
       { name: "redux", displayName: "RTK", color: "#764ABC" },
       { name: "mui", displayName: "MUI", color: "#027FFE" },
     ],
@@ -70,16 +115,48 @@ export const projectsData: MyProject[] = [
     github: "https://github.com/choigirang/my-movie",
     link: "https://my-movie-tawny.vercel.app/",
     description: [
-      "!Next 14 refactor",
-      "SSR에 최적화된 스타일 적용을 위해 tailwind로 마이그레이션을 진행하였습니다.",
-      "next-auth를 사용하여 소셜 로그인을 적용했습니다.",
-      "useQuery를 제외하고 Next 14의 data fetching을 적극 활용하였습니다.",
-      "라이브러리,컴포넌트,시멘틱 요소 등 최적화를 진행하여 80점대의 성능평가를 100점에 가깝게 개선하였습니다.",
-      "!Next 13",
-      "TMDB API를 활용해 제작한 프로젝트입니다.",
-      "*RTK, next-redux-wrapper를 사용하여 SSR 환경에서 상태 관리를 하였습니다.*",
-      "redux-persist를 사용하여 *페이지 전환 시에도 데이터를 유지*합니다.",
-      "useInfiniteQuery를 활용한 무한 스크롤을 적용하였습니다.*",
+      {
+        title:
+          "*pages 방식으로 작성된 Next13에서, Next 14로 리팩토링*하였습니다.",
+        detail: [
+          "Next 13의 get~ 방식에서, async/fetch로 쉽게 SSR을 구현할 수 있기에 리팩토링을 진행하였습니다.",
+          "next의 cache, prefetch를 사용하고 react-query를 제거하였습니다.",
+          "별도의 세팅이 필요한 MUI를 제거하고 tailwind로 마이그레이션하였습니다.",
+          "라이브러리 최소화, 재사용 컴포넌트, 시멘틱 요소 정리 등을 통해 웹사이트 성능을 80에서 98점으로 개선하였습니다.",
+        ],
+      },
+      {
+        title: "*next-auth를 사용하여 소셜 로그인*을 구현하였습니다.",
+        detail: [
+          "naver/kakao/google/github를 통한 로그인이 가능하며 next-auth의 token에 대해 학습하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*사용자의 데이터 저장을 위해 redux, redux-persist*를 사용하였습니다.",
+        detail: [
+          "next-redux-wrapper를 사용하여 SSR 환경에 맞게 세팅하였습니다.",
+          "redux-persist의 localstorage를 이용하여 페이지 전환 시에도 사용자의 로그인 정보 및 영화 저장 목록을 유지하였습니다.",
+        ],
+      },
+      {
+        title: "*axios 인터셉터를 이용하여 중복코드를 개선하였습니다.*",
+        detail: [],
+      },
+      {
+        title:
+          "*react-query의 infiniteQuery를 이용하여 무한 스크롤을 적용하였습니다.*",
+        detail: [
+          "리팩토링 후 더 보기 버튼을 클릭하여 이전 데이터에 추가적으로 불러온 데이터를 삽입하는 방식으로 대체하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*css in js 제거, 비슷한 기능을 하는 컴포넌트에 대한 리팩토링을 통해 최적화를 진행하여 웹 성능 평가를 개선하였습니다.*",
+        detail: [
+          "기존 성능 87점, 접근성 88점에서 각각 98,95점으로 개선하였습니다.",
+        ],
+      },
     ],
   },
   {
@@ -87,11 +164,13 @@ export const projectsData: MyProject[] = [
     title: "Portfolio - v1",
     name: "portfolio",
     displayName: "포트폴리오 v1",
+    summary: "리액트로 작성한 포트폴리오입니다.",
     role: "개인 프로젝트",
     refactor: [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
       { name: "react", displayName: "React", color: "#1CCEFF" },
       { name: "reactquery", displayName: "React-query", color: "#FF475A" },
+      { name: "axios", displayName: "Axios", color: "#884798" },
       { name: "tailwindcss", displayName: "Tailwind", color: "#05B6D3" },
       { name: "amazonec2", displayName: "EC2", color: "#F0921E" },
     ],
@@ -99,6 +178,7 @@ export const projectsData: MyProject[] = [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
       { name: "react", displayName: "React", color: "#1CCEFF" },
       { name: "reactquery", displayName: "React-query", color: "#FF475A" },
+      { name: "axios", displayName: "Axios", color: "#884798" },
       { name: "mui", displayName: "MaterialUi", color: "#027FFE" },
       { name: "framer", displayName: "Framer-motion", color: "#027FFE" },
     ],
@@ -106,18 +186,56 @@ export const projectsData: MyProject[] = [
     github: "https://github.com/choigirang/portfolio",
     link: "https://v1.choigirang-portfolio.site/",
     description: [
-      "!Refactor",
-      "SSR에 최적화된 스타일 적용을 위해 tailwind로 마이그레이션을 진행하였습니다.",
-      "웹 표준을 준수하며 올바른 시멘틱 태그 사용을 통해 접근성, 권장사항을 각각 100점에 맞추었습니다.",
-      "lazyloading, WebP, useMemo, useCallback 등을 이용하여 성능 평가를 50점대에서 100점으로 증가시킨 *최적화를 진행*하였습니다.",
-      "웹과 모바일 등 접근성을 높이기 위해 *반응형웹*으로 제작하였습니다.",
-      "*EC2를 이용하여 배포*하였습니다.",
-      "!Before",
-      "소개를 위해 제작한 프로젝트입니다.",
-      "Typescript로 *데이터 형태의 다양한 타입들을 커스텀*하여 사용하였습니다.",
-      "MUI를 사용하여 *테마 적용, TextFild, Tabs, Switch 등의 컴포넌트를 커스텀*하여 적용하였습니다.",
-      "FramerMotion을 사용하여 *Tooltip 등에 대한 애니메이션을 적용*하였습니다.",
-      "ReactQuery를 사용하여 *API 요청을 최소화* 하였습니다.",
+      {
+        title:
+          "*타입 에러를 통한 프로젝트 안정성을 높이기 위해 typescript를 사용하였습니다.*",
+        detail: [
+          "프로젝트 및 기술 스택에 대한 데이터를 유니온 타입과 유틸리티 타입을 사용하여 작성하였습니다.",
+          "재사용 컴포넌트의 props에 대한 타입 가드를 사용하여 작성하였습니다.",
+        ],
+      },
+      {
+        title: "*React의 성능 개선을 위해 최적화를 진행하였습니다.*",
+        detail: [
+          "Suspense, lazyloading을 사용하여 컴포넌트가 필요한 시점에 불러옵니다.",
+          "이미지 포맷을 Webp로 변경, useMemo, useCallback을 사용하여 불필요한 렌더링을 개선하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*react-query hooks을 만들어 중복 코드를 줄이고 캐시값을 사용하여 API요청을 최소화하였습니다.*",
+        detail: [],
+      },
+      {
+        title:
+          "스타일에 대한 성능 개선을 위해 *tailwind로 마이그레이션을 진행하였습니다.*",
+        detail: [
+          "라이브러리의 크기가 큰 MUI를 제거하고, tailwind를 사용하여 초기 로딩 속도를 개선하였습니다.",
+          "FramerMotion를 제거하고, 라이브러리에서 사용한 Tooltip, Accordian 컴포넌트를 직접 작성하였습니다.",
+        ],
+      },
+      {
+        title:
+          "웹과 모바일 등 다양한 기기의 접근성을 높이기 위해 *반응형 웹으로 제작하였습니다.*",
+        detail: [
+          "사용자 경험을 높이기 위해 화면 크기별 레이아웃 구성이 변경됩니다.",
+          "접근성을 높이기 위해 button, input 등 상호 작용이 일어나는 요소에 대해 사용자가 쉽게 인지할 수 있습니다.",
+        ],
+      },
+      {
+        title: "웹 표준, meta 작성 등 웹 성능 평가를 개선하였습니다.",
+        detail: [
+          "기존 성능 점수 42점, 접근성 89점, 권장사항 78점에서 각각 100, 95, 96점으로 개선하였습니다.",
+        ],
+      },
+      {
+        title: "*Amazone 서비스를 사용하였습니다.*",
+        detail: [
+          "ACM(AWS Certificate Manager)를 통해 프로젝트에 대한 인증서를 발급받고 로드밸런서를 사용하여 https를 적용하였습니다.",
+          "EC2를 사용하여 배포하였습니다.",
+          "S3를 통해 이미지를 저장하고 사용하였습니다.",
+        ],
+      },
     ],
   },
   {
@@ -125,6 +243,7 @@ export const projectsData: MyProject[] = [
     title: "다양한 이벤트를 활용한 토이 프로젝트",
     name: "windows95",
     displayName: "Windows 95",
+    summary: "브라우저에서 구현해본 윈도우 95입니다.",
     role: "개인 프로젝트",
     refactor: [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
@@ -146,12 +265,35 @@ export const projectsData: MyProject[] = [
     github: "https://github.com/choigirang/windows95",
     link: "https://choi-windows95.vercel.app/",
     description: [
-      "!Next 14",
-      "SSR에 최적화된 스타일 적용을 위해 tailwind로 마이그레이션을 진행하였습니다.",
-      "!Next 13",
-      "고전게임 포켓몬스터를 웹페이지에서 사용해보기 위해 제작한 프로젝트입니다.",
-      "드래그 및 캐릭터 좌표 이동에 대한 *불필요한 렌더링 발생을 해결하기 위해 useMemo, useCallback*에 대해 학습하였습니다.",
-      "Typescript로 *키보드, 마우스 등의 이벤트에 대한 타입을 학습하며 커스텀*하여 사용하였습니다.",
+      {
+        title:
+          "*pages 방식으로 작성된 Next13에서, Next 14로 리팩토링*하였습니다.",
+        detail: [
+          "빠른 화면 로드와 SSR 방식 학습을 위해 Next로 제작하였습니다.",
+          "별도의 세팅이 필요한 MUI를 제거하고 tailwind로 마이그레이션하였습니다.",
+          "dynamic meta data를 적용하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*타입에러를 통한 프로젝트의 안정성을 높이기 위해 typescript로 제작*하였습니다.",
+        detail: [
+          "키보드, 마우스 이벤트에 대한 타입을 작성하여 사용할 수 있습니다.",
+        ],
+      },
+      {
+        title: "*recoil을 사용하여 전역 상태를 관리하였습니다.*",
+        detail: [
+          "사용자가 선택한 아이콘 및 데이터에 대한 상태값을 정의하여 변경 및 사용할 수 있습니다.",
+        ],
+      },
+      {
+        title:
+          "*렌더링을 최소화 하기 위해 useMemo와 useCallback을 사용하였습니다.*",
+        detail: [
+          "캐릭터 이동 시 변경되는 image, window frame 창에 대한 초기값 등 불필요하게 발생하는 렌더링을 최소화하기 위해 최적화를 진행하였습니다.",
+        ],
+      },
     ],
   },
   {
@@ -159,6 +301,8 @@ export const projectsData: MyProject[] = [
     title: "CRUD를 위한 커뮤니티",
     name: "whyCommunity",
     displayName: "why-chat",
+    summary:
+      "Backend와 Frontend의 통신에 대해 학습하기 위해 제작한 커뮤니티입니다.",
     role: "개인 프로젝트",
     refactor: [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
@@ -187,18 +331,64 @@ export const projectsData: MyProject[] = [
     github: "https://github.com/choigirang/why-chat",
     link: "https://www.fe.why-chat.site",
     description: [
-      "!Next 14",
-      "SSR에 최적화된 스타일 적용을 위해 tailwind로 마이그레이션을 진행하였습니다.",
-      "useQuery를 제외하고 Next 14의 data fetching을 적극 활용하였습니다.",
-      "웹표준 시멘틱 태그, 동시 data fetching 최적화, dynamic import 등을 적용하여 각각의 웹 평가를 100점으로 개선하였습니다.",
-      "!Next 13",
-      "협업 프로젝트가 끝나고 부족한 부분을 학습하기 위해 제작한 커뮤니티입니다.",
-      "*유저/게시글/댓글 CRUD, 좋아요, 검색* 기능들을 구현하였습니다.",
-      "JWT를 이용해 직접 *access/refresh token을 만들어 관리하는 로직을 구현*해봄으로써 JWT와 쿠키를 이용한 *인증 방식에 대해 학습*하였습니다.",
-      "ReactQuery를 이용해 *서버 요청을 최소화*시키며, *캐시 데이터를 사용하는 것을 학습*하였습니다.",
-      "Redux를 이용해 *클라이언트 데이터를 저장하고 활용*하였습니다. ",
-      "Express, MongoDB를 이용해 *서버를 구현하여 데이터 통신에 대해 학습*하였습니다.",
-      "도메인을 구입하고 *AWS-Route53, ACM을 통해 SSL 인증하여 EC2로 배포*하였습니다.",
+      {
+        title: "SSR 및 SEO 적용을 위해 *Next 14*로 제작하였습니다.",
+        detail: [
+          "아래와 같은 이유로 SSR 방식에 이점이 있다고 생각하여 Next.js를 선택하였습니다.",
+          "커뮤니티이기에 다양한 정보가 존재하며 사용자가 검색 시 SEO 최적화와 각 페이지에 대한 정보를 동적으로 가져와야합니다.",
+          "커뮤니티의 특성상 다양한 페이지가 존재하며 빠른 페이지 전환이 필요합니다.",
+        ],
+      },
+      {
+        title:
+          "*pages 방식으로 작성된 Next13에서, Next 14로 리팩토링*하였습니다.",
+        detail: [
+          "Next 13의 get~ 방식에서, async/fetch로 쉽게 SSR을 구현할 수 있기에 리팩토링을 진행하였습니다.",
+          "next의 cache, prefetch를 사용하고 react-query를 제거하였습니다.",
+          "재사용 컴포넌트, 시멘틱 요소 정리 등을 통해 웹사이트 성능을 73점, 접근성 86점에서 각각 100점으로 개선하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*Next.js에 최적화된 스타일 적용을 위해 tailwind*로 마이그레이션을 진행하였습니다.",
+        detail: [
+          "런타임에서 적용되는 styled-component를 제거하고 빌드 타임에 적용되는 tailwind를 선택하여 SSR 시 별도의 설정 없이 스타일이 적용될 수 있도록 하였습니다.",
+          "가독성을 높이기 위해 반복되는 스타일을 미리 선언하여 적용하였습니다.",
+          "커스텀 테마를 사용하여 스타일을 적용할 수 있습니다.",
+        ],
+      },
+      {
+        title:
+          "*타입 에러를 통한 프로젝트 안정성을 높이기 위해 typescript를 사용하였습니다.*",
+        detail: [
+          "사용자가 작성한 데이터의 유니온 타입과 유틸리티 타입을 사용하여 작성하였습니다.",
+          "비동기 데이터에 대한 타입을 작성하여 적용하였습니다.",
+        ],
+      },
+      {
+        title:
+          "필요에 따라 *클라이언트 / 서버 컴포넌트를 분리*하여 작성하였습니다.",
+        detail: [
+          "data를 props로 활용하고, children을 사용하여 클라이언트 컴포넌트 안에서 서버 컴포넌트를 사용하였습니다.",
+        ],
+      },
+      {
+        title:
+          "*express, mongoDB를 이용하여 서버를 구현하고 데이터 통신에 대해 학습하였습니다.*",
+        detail: [
+          "CRUD 구현과 RESTful에 대해 학습하였습니다.",
+          "JWT를 이용하여 access/refresh token을 암호화하며 사용자 인증에 대해 학습하였습니다.",
+          "토큰을 사용한 자동로그인 및 아이디 저장 기능을 작성하였습니다.",
+        ],
+      },
+      {
+        title: "*Amazone 서비스를 사용하였습니다.*",
+        detail: [
+          "ACM(AWS Certificate Manager)를 통해 프로젝트에 대한 인증서를 발급받고 로드밸런서를 사용하여 https를 적용하였습니다.",
+          "EC2를 사용하여 배포하였습니다.",
+          "S3를 통해 이미지를 저장하고 사용하였습니다.",
+        ],
+      },
     ],
   },
   {
@@ -206,7 +396,8 @@ export const projectsData: MyProject[] = [
     title: "BE & FE 팀 프로젝트",
     name: "sideQuest",
     displayName: "Side Quest",
-    role: "팀 프로젝트 (FE 게시글 CRUD & Design)",
+    summary: "부트캠프에서 진행한 커뮤니티 팀 프로젝트입니다.",
+    role: "팀 프로젝트 (FE 게시글 CRUD)",
     front: [
       { name: "typescript", displayName: "Type-script", color: "#387BC8" },
       { name: "nextdotjs", displayName: "Next.js", color: "#000000" },
@@ -222,13 +413,48 @@ export const projectsData: MyProject[] = [
     ],
     back: [],
     github: "https://github.com/codestates-seb/seb43_main_032",
-    link: "https://www.sidequest.co.kr/",
+    link: "",
     description: [
-      "사이드 프로젝트를 진행할 수 있는 커뮤니티입니다.",
-      "피그마를 이용한 화면 정의서 구현, 피드백을 받고 코드를 수정하는 과정을 겪으면서 *FE끼리 혹은 FE와 BE간의 대한 협업에 대한 전반적인 과정에 대해 경험*할 수 있었습니다.",
-      "*API/인증 등에 대해 백엔드 개발자들과 협업*하는 과정을 통해 많은 얘기를 나누고 각자의 입장을 이해하는데 도움이 되었습니다.",
-      "팀원으로 *게시글에 대한 CRUD, 검색, 전반적인 스타일 및 애니메이션 구현을 담당*하였습니다.",
-      "*styled-components의 사용법*, *전역 세팅 방법*, *TypeScript 적용 방법을 이해*하고 코드에 적용했습니다",
+      {
+        title:
+          "*Backend와의 협업을 통해 프로젝트 진행 과정에 대해 학습*하였습니다.",
+        detail: [
+          "화면 정의서를 구현하고 API문서를 작성하였습니다.",
+          "CORS에러 발생으로 에러에 대한 개념을 학습하며 HTTP 요청 헤더 Origin 및 서버 Access-Control-Allow-Origin 허용으로 문제를 해결하였습니다.",
+          "request payload, response body에 대해 학습하였습니다.",
+        ],
+      },
+      {
+        title: "*typescript를 적용하며 학습하였습니다.*",
+        detail: [
+          "처음으로 학습하며 적용해본 타입스크립트를 통해 타입 불일치로 인한 에러 발생으로 프로젝트의 안정성을 높일 수 있음을 학습하였습니다.",
+          "데이터의 유니온 타입과 유틸리티 타입에 대해 학습하였습니다.",
+        ],
+      },
+      {
+        title: "*게시글 페이지의 CRUD, 검색 기능을 담당하였습니다.*",
+        detail: [
+          "react-query를 통해 데이터의 캐시값을 이용하여 api요 최소화에 대해 학습하였습니다.",
+          "custom hook을 사용하여 유저가 입력한 정보와 서버로부터 전달된 데이터의 갯수를 파악하여 pagination을 구현하였습니다.",
+        ],
+      },
+      {
+        title: "*styled-components를 사용하여 스타일을 적용하였습니다.*",
+        detail: [
+          "글로벌 컴포넌트와 재사용 컴포넌트를 작성하여 사용하였습니다.",
+          "props를 통한 스타일을 변경과 props에 대한 타입 작성에 대해 학습하였습니다..",
+        ],
+      },
+      {
+        title:
+          "피그마를 이용하여 화면 정의서를 구현하는 과정을 학습하였습니다.",
+        detail: [],
+      },
+      // "사이드 프로젝트를 진행할 수 있는 커뮤니티입니다.",
+      // "피그마를 이용한 화면 정의서 구현, 피드백을 받고 코드를 수정하는 과정을 겪으면서 *FE끼리 혹은 FE와 BE간의 대한 협업에 대한 전반적인 과정에 대해 경험*할 수 있었습니다.",
+      // "*API/인증 등에 대해 백엔드 개발자들과 협업*하는 과정을 통해 많은 얘기를 나누고 각자의 입장을 이해하는데 도움이 되었습니다.",
+      // "팀원으로 *게시글에 대한 CRUD, 검색, 전반적인 스타일 및 애니메이션 구현을 담당*하였습니다.",
+      // "*styled-components의 사용법*, *전역 세팅 방법*, *TypeScript 적용 방법을 이해*하고 코드에 적용했습니다",
     ],
   },
 ];
