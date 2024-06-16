@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Description from "./description";
 import Image from "next/image";
 import { MySkills } from "@/assets/skills";
 import useSize from "@/hooks/useSize";
 
 /** 2024/04/10 - 개별 Skill List */
-export default function List(list: MySkills) {
+function List(list: MySkills) {
   const [desOpen, setDesOpen] = useState(false);
   const { isMobile } = useSize();
 
@@ -28,7 +28,7 @@ export default function List(list: MySkills) {
       />
       <div className="flex justify-center">
         <Image
-          src={`https://cdn.simpleicons.org/${list.name}/${list.color}`}
+          src={`https://cdn.simpleicons.org/${list.name}`}
           alt={`${list.name} 아이콘`}
           width={`${isMobile ? 40 : 60}`}
           height={`${isMobile ? 40 : 60}`}
@@ -45,3 +45,5 @@ export default function List(list: MySkills) {
     </li>
   );
 }
+
+export default React.memo(List);
