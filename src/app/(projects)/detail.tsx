@@ -32,7 +32,7 @@ export default function Detail(data: MyProject) {
             key={des.title}
             className="flex flex-col text-start sm:text-sm md:text-base"
           >
-            <span className="flex gap-2 mb-1">
+            <span className="flex gap-2 mb-1 text-base">
               <CheckBadgeIcon width={16} height={16} color="green" />
               {parseDescription(des.title)}
             </span>
