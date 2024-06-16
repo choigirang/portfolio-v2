@@ -7,16 +7,20 @@ export default function Detail(data: MyProject) {
   const parseDescription = (text: string) => {
     const parts = text.split("*");
 
-    return parts
-      .map((part, index) => {
-        if (part === "") return null;
-        return index % 2 === 0 ? (
-          <span key={index}>{part}</span>
-        ) : (
-          <strong key={index}>{part}</strong>
-        );
-      })
-      .filter(Boolean);
+    return (
+      <span>
+        {parts
+          .map((part, index) => {
+            if (part === "") return null;
+            return index % 2 === 0 ? (
+              <span key={`detail ${index}`}>{part}</span>
+            ) : (
+              <strong key={`strong ${index}`}>{part}</strong>
+            );
+          })
+          .filter(Boolean)}
+      </span>
+    );
   };
 
   return (
@@ -34,8 +38,10 @@ export default function Detail(data: MyProject) {
             </span>
             <ul className="flex flex-col gap-1 pl-4">
               {des.detail.length !== 0 &&
-                des.detail.map((detail) => (
-                  <li className="text-stone-500">- {detail}</li>
+                des.detail.map((detail, idx) => (
+                  <li className="text-stone-500" key={`${detail + idx}`}>
+                    - {detail}
+                  </li>
                 ))}
             </ul>
           </li>
