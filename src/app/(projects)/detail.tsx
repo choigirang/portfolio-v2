@@ -30,13 +30,13 @@ export default function Detail(data: MyProject) {
         {data.description.map((des) => (
           <li
             key={des.title}
-            className="flex flex-col text-start text-sm sm:text-sm md:text-base"
+            className="flex flex-col text-start sm:text-sm md:text-base"
           >
             <span className="flex gap-2 mb-1">
               <CheckBadgeIcon width={16} height={16} color="green" />
               {parseDescription(des.title)}
             </span>
-            <ul className="flex flex-col gap-1 pl-4">
+            <ul className="flex flex-col text-sm gap-1 pl-4">
               {des.detail.length !== 0 &&
                 des.detail.map((detail, idx) => (
                   <li className="text-stone-500" key={`${detail + idx}`}>
