@@ -2,10 +2,10 @@
 
 import useSize from "@/hooks/useSize";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 /** 2024/04/10 - 스킬 설명란 */
-export default function Description({
+function Description({
   desOpen,
   des,
   color,
@@ -51,3 +51,5 @@ export default function Description({
     </>
   );
 }
+
+export default React.memo(Description);

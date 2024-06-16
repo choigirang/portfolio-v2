@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import useScroll from "../../hooks/useScroll";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { ArrowRightCircleIcon, Bars2Icon } from "@heroicons/react/16/solid";
 import useSize from "../../hooks/useSize";
 
@@ -18,11 +18,11 @@ export default function Category() {
 
   /** 모바일 사이즈 */
 
-  const handleNav = () => {
+  const handleNav = useCallback(() => {
     setShowNav((prev) => !prev);
-  };
+  }, [showNav]);
 
-  const getStyles = () => {
+  const getStyles = useCallback(() => {
     const styles = {
       ...(isMobile && {
         width: "70vw",
@@ -40,7 +40,7 @@ export default function Category() {
     };
 
     return styles;
-  };
+  }, [isMobile]);
 
   return (
     <>

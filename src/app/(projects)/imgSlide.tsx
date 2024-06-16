@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import {
   ArrowLeftCircleIcon,
   ArrowRightCircleIcon,
@@ -17,8 +17,11 @@ export default function ImgSlide(data: MyProject) {
   const { isMobile, isTablet } = useSize();
   const getImg = useGetimg(data.name);
 
-  const refactor = data.refactor;
-  const skills = data.back ? [...data.front, ...data.back] : data.front;
+  const refactor = useMemo(() => data.refactor, []);
+  const skills = useMemo(
+    () => (data.back ? [...data.front, ...data.back] : data.front),
+    []
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,20 +37,23 @@ export default function ImgSlide(data: MyProject) {
     fetchData();
   }, []);
 
-  const handleSlide = (dir: "next" | "prev") => {
-    if (dir === "next" && imgUrl && imgUrl.length > slideNum + 1)
-      setSlideNum((prev) => prev + 1); // 후위 증가 연산자를 사용합니다.
-    if (dir === "prev" && slideNum > 0) setSlideNum((prev) => prev - 1); // 후위 감소 연산자를 사용합니다.
-  };
+  const handleSlide = useCallback(
+    (dir: "next" | "prev") => {
+      if (dir === "next" && imgUrl && imgUrl.length > slideNum + 1)
+        setSlideNum((prev) => prev + 1);
+      if (dir === "prev" && slideNum > 0) setSlideNum((prev) => prev - 1);
+    },
+    [imgUrl]
+  );
 
-  const handleImgProps = () => {
+  const handleImgProps = useCallback(() => {
     if (isMobile) {
       return { width: 300, height: 200, layout: undefined };
     } else if (isTablet) {
       return { width: 400, height: 300, layout: undefined };
     }
     return { width: 500, height: 350, layout: undefined };
-  };
+  }, [isMobile, isTablet]);
 
   return (
     <div className="h-full flex flex-col items-center gap-2">
@@ -90,9 +96,6 @@ export default function ImgSlide(data: MyProject) {
                   width="30"
                   height="30"
                   style={{ borderColor: skill.color }}
-                  onError={(err) =>
-                    console.log(`https://cdn.simpleicons.org/${skill.name}`)
-                  }
                 />
               </li>
             ))}
