@@ -152,4 +152,10 @@ export const etcSkills: MySkills[] = [
     displayName: "JWT",
     description: `AccessToken과 RefreshToken을 직접 만들어서 인증을 처리하는 로직을 구현해본 경험이 있습니다.`,
   },
+  {
+    name: "firebase",
+    color: "#DC2C01",
+    displayName: "Firebase",
+    description: `데이터 저장을 위한 storage를 사용해본 경험이 있습니다.`,
+  },
 ];
