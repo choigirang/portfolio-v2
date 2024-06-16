@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { MySkills } from "@/assets/skills";
 import List from "./list";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
 /** 2024/04/10 - 스킬 리스트 */
 export default function Lists({
@@ -33,7 +32,7 @@ export default function Lists({
         }}
       >
         {data.map((list) => (
-          <List key={list.name} {...list} />
+          <List key={`skills ${list.name}`} {...list} />
         ))}
       </ul>
     </div>

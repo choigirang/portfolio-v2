@@ -9,7 +9,7 @@ export default function About() {
         <ul className="grid grid-rows-fluidity grid-cols-fluidity sm:grid-rows-1 sm:grid-cols-1 md:grid-rows-1 md:grid-cols-2 place-items-start gap-y-16 sm:gap-y-8">
           {meData.map(({ displayName, displayTxt, Icon, link }) => (
             <li
-              key={displayName}
+              key={`info ${displayName}`}
               className="flex justify-between space-x-4 px-4"
             >
               {<Icon className="w-16 h-16" />}

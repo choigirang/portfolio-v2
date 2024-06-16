@@ -8,7 +8,7 @@ export default function Projects() {
       <section className="container h-full">
         <ul className="w-full flex flex-col gap-8">
           {projectsData.map((project) => (
-            <Card key={project.name} {...project} />
+            <Card key={`project name ${project.name}`} {...project} />
           ))}
         </ul>
       </section>

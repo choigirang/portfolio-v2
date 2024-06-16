@@ -50,7 +50,7 @@ export default function ImgSlide(data: MyProject) {
   };
 
   return (
-    <>
+    <div className="h-full flex flex-col items-center gap-2">
       {imgUrl ? (
         <Image
           src={imgUrl[slideNum]}
@@ -78,33 +78,36 @@ export default function ImgSlide(data: MyProject) {
 
       <div className="flex flex-col gap-2">
         {refactor && refactor.length !== 0 && (
-          <ul className="flex justify-center gap-2 flex-wrap">
+          <ul className="flex justify-start gap-2 flex-wrap">
             <li className="flex items-center text-stone-800 bg-yellow-400 px-1 rounded">
               refactor
             </li>
             {refactor.map((skill) => (
-              <li key={skill.name}>
+              <li key={`project img ${skill.name}`}>
                 <Image
-                  src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
+                  src={`https://cdn.simpleicons.org/${skill.name}`}
                   alt={`${skill.name} 아이콘`}
                   width="30"
                   height="30"
                   style={{ borderColor: skill.color }}
+                  onError={(err) =>
+                    console.log(`https://cdn.simpleicons.org/${skill.name}`)
+                  }
                 />
               </li>
             ))}
           </ul>
         )}
-        <ul className="flex justify-center gap-2 flex-wrap">
+        <ul className="flex justify-start gap-2 flex-wrap">
           {refactor && (
             <li className="flex items-center text-stone-800 bg-yellow-400 px-1 rounded">
               before
             </li>
           )}
           {skills.map((skill) => (
-            <li key={skill.name}>
+            <li key={`project img ${skill.name}`}>
               <Image
-                src={`https://cdn.simpleicons.org/${skill.name}/${skill.color}`}
+                src={`https://cdn.simpleicons.org/${skill.name}`}
                 alt={`${skill.name} 아이콘`}
                 width="30"
                 height="30"
@@ -138,6 +141,6 @@ export default function ImgSlide(data: MyProject) {
         {/* 테블릿 모드 */}
         {isTablet && <div></div>}
       </div>
-    </>
+    </div>
   );
 }
