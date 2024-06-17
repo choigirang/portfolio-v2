@@ -512,7 +512,7 @@ export const projectsData: MyProject[] = [
       {
         title: "*게시글 페이지의 CRUD, 검색 기능을 담당하였습니다.*",
         detail: [
-          "react-query를 통해 데이터의 캐시값을 이용하여 api요 최소화에 대해 학습하였습니다.",
+          "react-query를 통해 데이터의 캐시값을 이용하여 API요청 최소화에 대해 학습하였습니다.",
           "custom hook을 사용하여 유저가 입력한 정보와 서버로부터 전달된 데이터의 갯수를 파악하여 pagination을 구현하였습니다.",
         ],
       },
@@ -520,7 +520,7 @@ export const projectsData: MyProject[] = [
         title: "*styled-components를 사용하여 스타일을 적용하였습니다.*",
         detail: [
           "글로벌 컴포넌트와 재사용 컴포넌트를 작성하여 사용하였습니다.",
-          "props를 통한 스타일을 변경과 props에 대한 타입 작성에 대해 학습하였습니다..",
+          "props를 통한 스타일을 변경과 props에 대한 타입 작성에 대해 학습하였습니다.",
         ],
       },
       {

@@ -39,7 +39,7 @@ export default function Detail(data: MyProject) {
             <ul className="flex flex-col text-sm gap-1 pl-4">
               {des.detail.length !== 0 &&
                 des.detail.map((detail, idx) => (
-                  <li className="text-stone-500" key={`${detail + idx}`}>
+                  <li className="text-stone-600" key={`${detail + idx}`}>
                     - {detail}
                   </li>
                 ))}
